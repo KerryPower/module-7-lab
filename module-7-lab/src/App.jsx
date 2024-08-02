@@ -6,7 +6,7 @@ import { Greeting } from './components/Greeting/Greeting'
 import BigCats from './components/Cats/BigCats'
 import Emoji from './components/Emoji/EmojiChanger'
 import Calculator from './components/Calculator/Calculator'
-import BitcoinRates from './components/BitcoinRates'
+import BitcoinRates from './components/BitcoinRates/BitcoinRates'
 
 function App() {
 

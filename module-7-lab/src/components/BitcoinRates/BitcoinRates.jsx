@@ -1,22 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import useFetchBitcoinPrice from "../FetchBitcoinPrice/FetchBitcoinPrice";
 
 const currencies = ['USD', 'AUD', 'NZD', 'GBP', 'EUR', 'SGD'];
 
 export default function BitcoinRates() {
     const [currency, setCurrency] = useState(currencies[0]);
-    const [price, setPrice] = useState(null);
+    const price = useFetchBitcoinPrice(currency);
 
-    useEffect(() => {
-        fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`)
-            .then(response => response.json())
-            .then(json => {
-                setPrice(json.bitcoin[currency.toLowerCase()]);
-            })
-            .catch(error => {
-                console.error("Error fetching the price:", error);
-                setPrice('Error');
-            });
-    }, [currency]);
 
     const options = currencies.map(curr => <option value={curr} key={curr}>{curr}</option>);
 
