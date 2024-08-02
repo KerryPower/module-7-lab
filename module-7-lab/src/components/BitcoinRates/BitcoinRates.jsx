@@ -4,13 +4,13 @@ const currencies = ['USD', 'AUD', 'NZD', 'GBP', 'EUR', 'SGD'];
 
 export default function BitcoinRates() {
     const [currency, setCurrency] = useState(currencies[0]);
-    const [price, setPrice] = useState();
+    const [price, setPrice] = useState(null);
 
     useEffect(() => {
         fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`)
             .then(response => response.json())
             .then(json => {
-                setPrice(json.currency);
+                setPrice(json.bitcoin[currency.toLowerCase()]);
             })
             .catch(error => {
                 console.error("Error fetching the price:", error);
@@ -28,7 +28,8 @@ export default function BitcoinRates() {
                     {options}
                 </select>
             </label>
-            <p>{price}</p>
+            <p>1 Bitcoin = {price} {currency}</p>
         </div>
     );
 }
+
