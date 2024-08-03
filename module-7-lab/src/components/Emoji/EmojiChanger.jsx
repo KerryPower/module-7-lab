@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useMood } from './context/EmojiContext';
+import { useMood } from '../context/EmojiContext';
 
 export default function Emoji() {
   const { isHappy, toggleMood } = useMood();

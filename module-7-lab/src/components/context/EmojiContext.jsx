@@ -1,5 +1,5 @@
 import { createContext, useReducer, useContext } from 'react';
-import { emojiReducer } from '../EmojiReducer';
+import { emojiReducer } from '../Emoji/EmojiReducer';
 
 const MoodContext = createContext();
 

@@ -7,6 +7,7 @@ export default function NavBar() {
 style={{}}>
 <ul className="menu">
 <li><NavLink to="/">Home</NavLink></li>
+<li><NavLink to="/LoginPage">Login</NavLink></li>
 <li><NavLink to="/CatsPage">Cats</NavLink></li>
 <li><NavLink to="/BitcoinPage">Bitcoin</NavLink></li>
 </ul>

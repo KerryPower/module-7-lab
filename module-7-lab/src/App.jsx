@@ -7,7 +7,7 @@ import BigCats from './components/Cats/BigCats'
 import Emoji from './components/Emoji/EmojiChanger'
 import Calculator from './components/Calculator/Calculator'
 import BitcoinRates from './components/BitcoinRates/BitcoinRates'
-import { MoodProvider } from './components/Emoji/context/EmojiContext'
+import { MoodProvider } from './components/context/EmojiContext'
 import AppRoutes from './routes/AppRoutes'
 import NavBar from './components/NavBar'
 

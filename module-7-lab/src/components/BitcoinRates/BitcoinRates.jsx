@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useFetchBitcoinPrice from "../FetchBitcoinPrice/FetchBitcoinPrice";
-import { useMood } from "../Emoji/context/EmojiContext";
+import { useMood } from "../context/EmojiContext";
 
 const currencies = ['USD', 'AUD', 'NZD', 'GBP', 'EUR', 'SGD'];
 
