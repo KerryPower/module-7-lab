@@ -1,9 +1,9 @@
 [
-  { "name": "Cheetah", "latinName": "Acinonyx jubatus", "image": "cheetah.jpg" },
-  { "name": "Leopard", "latinName": "Panthera pardus", "image": "leopard.jpg" },
-  { "name": "Jaguar", "latinName": "Panthera onca", "image": "jaguar.jpg" },
-  { "name": "Tiger", "latinName": "Panthera tigris", "image": "tiger.jpg" },
-  { "name": "Cougar", "latinName": "Puma concolor", "image": "cougar.jpg" },
-  { "name": "Lion", "latinName": "Panthera leo", "image": "lion.jpg" },
-  { "name": "Snow leopard", "latinName": "Panthera uncia", "image": "snow_leopard.jpg" }
+  { "name": "Cheetah", "latinName": "Acinonyx jubatus", "image": "https://images.pexels.com/photos/88234/pexels-photo-88234.jpeg" },
+  { "name": "Leopard", "latinName": "Panthera pardus", "image": "https://images.pexels.com/photos/1316297/pexels-photo-1316297.jpeg" },
+  { "name": "Jaguar", "latinName": "Panthera onca", "image": "https://images.pexels.com/photos/773000/pexels-photo-773000.jpeg" },
+  { "name": "Tiger", "latinName": "Panthera tigris", "image": "https://images.pexels.com/photos/792381/pexels-photo-792381.jpeg" },
+  { "name": "Cougar", "latinName": "Puma concolor", "image": "https://images.pexels.com/photos/20903832/pexels-photo-20903832/free-photo-of-selective-focus-of-cougar.jpeg" },
+  { "name": "Lion", "latinName": "Panthera leo", "image": "https://images.pexels.com/photos/2220337/pexels-photo-2220337.jpeg" },
+  { "name": "Snow leopard", "latinName": "Panthera uncia", "image": "https://images.pexels.com/photos/751820/pexels-photo-751820.jpeg" }
 ]

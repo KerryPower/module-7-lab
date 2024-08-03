@@ -69,11 +69,13 @@ export default function BigCats() {
                         <SingleCat
                             name={cat.name}
                             latinName={cat.latinName}
-                            image={`/images/${cat.image}`}
+                            image={cat.image}
                         />
                         <button onClick={() => handleDeleteCat(index)}>Delete</button>
                     </div>
                 ))}
+            </div>
+            <div className='addCatForm'>
                 <AddCatForm onAddCat={handleAddCat} />
             </div>
         </div>

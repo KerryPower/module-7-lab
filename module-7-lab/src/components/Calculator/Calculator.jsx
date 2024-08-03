@@ -52,9 +52,11 @@ export default function Calculator() {
         <div className="calculator">
             <h2>Simple Calculator</h2>
             <div>
-                <input type="number" value={num1} onChange={handleNum1Input} />
+                <label htmlFor="num1">Number 1</label>
+                <input type="number" value={num1} onChange={handleNum1Input} id='num1'/>
                 <br />
-                <input type="number" value={num2} onChange={handleNum2Input} />
+                <label htmlFor="num2">Number 2</label>
+                <input type="number" value={num2} onChange={handleNum2Input} id='num2'/>
                 <br />
                 <button disabled={disabledButton} onClick={() => handlebuttonClick('+')}>+</button>
                 <button disabled={disabledButton} onClick={() => handlebuttonClick('-')}>-</button>

@@ -1,16 +1,17 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useReducer, useContext } from 'react';
+import { emojiReducer } from '../EmojiReducer';
 
 const MoodContext = createContext();
 
 export function MoodProvider({ children }) {
-  const [isHappy, setIsHappy] = useState(true);
+  const [state, dispatch] = useReducer(emojiReducer, { isHappy: true });
 
   const toggleMood = () => {
-    setIsHappy(prevIsHappy => !prevIsHappy);
+    dispatch({ type: 'TOGGLE_MOOD' });
   };
 
   return (
-    <MoodContext.Provider value={{ isHappy, toggleMood }}>
+    <MoodContext.Provider value={{ isHappy: state.isHappy, toggleMood }}>
       {children}
     </MoodContext.Provider>
   );

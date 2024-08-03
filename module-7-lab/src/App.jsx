@@ -8,14 +8,16 @@ import Emoji from './components/Emoji/EmojiChanger'
 import Calculator from './components/Calculator/Calculator'
 import BitcoinRates from './components/BitcoinRates/BitcoinRates'
 import { MoodProvider } from './components/Emoji/context/EmojiContext'
+import AppRoutes from './routes/AppRoutes'
+import NavBar from './components/NavBar'
 
 
 function App() {
 
-  return ( 
+  return (
     <MoodProvider>
-      <Emoji />
-      <BitcoinRates />
+      <NavBar />
+      <AppRoutes />
     </MoodProvider>
   )
 }
