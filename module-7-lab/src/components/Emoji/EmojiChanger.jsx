@@ -1,18 +1,14 @@
 import { useState } from 'react';
+import { useMood } from './context/EmojiContext';
 
-export default function Emoji(){
-  
-  const [isHappy, setIsHappy] = useState(true);
-
-  const handleClick = () => {
-    setIsHappy(prevIsHappy => !prevIsHappy);
-  };
+export default function Emoji() {
+  const { isHappy, toggleMood } = useMood();
 
   return (
     <div>
       <h2>Emoji Changer Component</h2>
       <div style={{ fontSize: '3rem' }}>{isHappy ? '😊' : '😞'}</div>
-      <button onClick={handleClick}>Change Mood</button>
+      <button onClick={toggleMood}>Change Mood</button>
     </div>
   );
 }

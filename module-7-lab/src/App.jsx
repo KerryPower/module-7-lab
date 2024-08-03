@@ -7,13 +7,16 @@ import BigCats from './components/Cats/BigCats'
 import Emoji from './components/Emoji/EmojiChanger'
 import Calculator from './components/Calculator/Calculator'
 import BitcoinRates from './components/BitcoinRates/BitcoinRates'
+import { MoodProvider } from './components/Emoji/context/EmojiContext'
+
 
 function App() {
 
-  return (
-    <>
-    <BitcoinRates />
-    </>
+  return ( 
+    <MoodProvider>
+      <Emoji />
+      <BitcoinRates />
+    </MoodProvider>
   )
 }
 
