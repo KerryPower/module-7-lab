@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const UserContext = createContext({
   currentUser: null,
@@ -8,8 +8,21 @@ const UserContext = createContext({
 export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
 
+  useEffect(() => {
+    const storedUser = localStorage.getItem('currentUser');
+    if (storedUser) {
+      setCurrentUser(JSON.parse(storedUser));
+    }
+  }, []);
+
   const handleUpdateUser = (user) => {
-    setCurrentUser(user);
+    if (user.email) {
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      setCurrentUser(user);
+    } else {
+      localStorage.removeItem('currentUser');
+      setCurrentUser(null);
+    }
   };
 
   return (

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useMood } from '../context/EmojiContext';
 
 export default function Emoji() {
