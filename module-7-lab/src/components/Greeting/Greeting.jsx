@@ -1,8 +1,10 @@
-export function Greeting(props) {
+export function Greeting({name="world", children}) {
 
     return (
         <div>
-            {props.children ? <h2>{props.children}</h2> : props.name ? <h2>Hello {props.name}</h2> : <h2>Hello World</h2>}
+            <h2>Hello {name}</h2>
+            <div>{children}</div>
         </div>
+        
     )
 }

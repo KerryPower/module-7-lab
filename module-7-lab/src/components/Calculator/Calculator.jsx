@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { TextField, Button, ButtonGroup } from '@mui/material';
 
 export default function Calculator() {
     const [num1, setNum1] = useState('');
     const [num2, setNum2] = useState('');
-    const [result, setResult] = useState('');
+    const [result, setResult] = useState('0');
 
     const handleNum1Input = (e) => {
         setNum1(e.target.value);
@@ -52,19 +53,46 @@ export default function Calculator() {
         <div className="calculator">
             <h2>Simple Calculator</h2>
             <div>
-                <label htmlFor="num1">Number 1</label>
-                <input type="number" value={num1} onChange={handleNum1Input} id='num1'/>
+                <TextField
+                    id="num1"
+                    value={num1}
+                    label="Number 1"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    onChange={handleNum1Input}
+                />
                 <br />
-                <label htmlFor="num2">Number 2</label>
-                <input type="number" value={num2} onChange={handleNum2Input} id='num2'/>
                 <br />
-                <button disabled={disabledButton} onClick={() => handlebuttonClick('+')}>+</button>
-                <button disabled={disabledButton} onClick={() => handlebuttonClick('-')}>-</button>
-                <button disabled={disabledButton} onClick={() => handlebuttonClick('*')}>*</button>
-                <button disabled={disabledButton} onClick={() => handlebuttonClick('/')}>/</button>
+                <TextField
+                    id="num2"
+                    value={num2}
+                    label="Number 2"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    onChange={handleNum2Input}
+                />
                 <br />
-                <label htmlFor="result">Result</label>
-                <input type="text" id="result" value={result} readOnly />
+                <br />
+                <ButtonGroup variant='outlined'>
+                    <Button disabled={disabledButton} onClick={() => handlebuttonClick('+')}>+</Button>
+                    <Button disabled={disabledButton} onClick={() => handlebuttonClick('-')}>-</Button>
+                    <Button disabled={disabledButton} onClick={() => handlebuttonClick('*')}>*</Button>
+                    <Button disabled={disabledButton} onClick={() => handlebuttonClick('/')}>/</Button>
+                </ButtonGroup>
+                <br />
+                <br />
+                <TextField
+                    id="result"
+                    label="Result"
+                    value={result}
+                    InputProps={{
+                        readOnly: true,
+                    }}
+                />
             </div>
         </div>
     );

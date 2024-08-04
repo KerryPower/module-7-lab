@@ -10,8 +10,8 @@ export default function AppRoutes(props) {
     <Routes>
     <Route index element={<Homepage {...props} />} /> 
     <Route path="/login" element={<LoginPage {...props} />} />
-    <Route path="/cats" element={<ProtectedRoute><CatsPage {...props} /></ProtectedRoute>} />
-    <Route path="/bitcoin" element={<ProtectedRoute><BitcoinPage {...props} /></ProtectedRoute>} />
+    <Route path="/cats" element={<CatsPage {...props} />} />
+    <Route path="/bitcoin" element={<BitcoinPage {...props} />} />
     </Routes>
     )
 }

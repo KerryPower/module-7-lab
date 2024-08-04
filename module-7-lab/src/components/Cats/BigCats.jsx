@@ -2,6 +2,7 @@ import { useState } from 'react';
 import SingleCat from './SingleCat';
 import cats from './cats.json';
 import AddCatForm from './AddCatForm';
+import { Box, Button, Grid, ButtonGroup} from '@mui/material';
 
 export default function BigCats() {
     const [list, setList] = useState(cats);
@@ -56,25 +57,27 @@ export default function BigCats() {
     return (
         <div className="big-cats">
             <h2>Big Cats List</h2>
-            <button onClick={handleReverseClick}>
-                {reversed ? 'Reset' : 'Reverse List'}</button>
-            <button onClick={handleAlphabetiseClick}>
-                {alphabetised ? 'Reset' : 'Alphabetise List'}</button>
-            <button onClick={handleFilterClick}>
-                {filtered ? 'Reset Filter' : 'Panthera Filter'}</button>
-            <button onClick={handleResetClick}>Original List</button>
-            <div className="cats-list">
+            <ButtonGroup variant="outlined">
+            <Button onClick={handleReverseClick}>
+                {reversed ? 'Reset' : 'Reverse List'}</Button>
+            <Button onClick={handleAlphabetiseClick}>
+                {alphabetised ? 'Reset' : 'Alphabetise List'}</Button>
+            <Button onClick={handleFilterClick}>
+                {filtered ? 'Reset Filter' : 'Panthera Filter'}</Button>
+            <Button onClick={handleResetClick}>Original List</Button>
+            </ButtonGroup>
+            <Grid container spacing={3} margin={10}>
                 {displayList.map((cat, index) => (
-                    <div key={index} className="single-cat">
+                   <Box key={index} width={250} sx={{ margin: 3, border: '2px solid black', borderRadius: 10, }}>
                         <SingleCat
                             name={cat.name}
                             latinName={cat.latinName}
                             image={cat.image}
                         />
-                        <button onClick={() => handleDeleteCat(index)}>Delete</button>
-                    </div>
+                        <Button onClick={() => handleDeleteCat(index)} variant="outlined">Delete</Button>
+                        </Box>
                 ))}
-            </div>
+                </Grid>
             <div className='addCatForm'>
                 <AddCatForm onAddCat={handleAddCat} />
             </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { TextField, Button } from '@mui/material';
 
 export default function AddCatForm({ onAddCat }){
     const [name, setName] = useState('');
@@ -27,22 +28,17 @@ export default function AddCatForm({ onAddCat }){
     return (
         <form onSubmit={handleSubmit}>
             <h2>Add a New Big Cat</h2>
-            <label>
-                Name:
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-            </label>
+            <TextField id="standard-basic" label="Name:" variant="standard" value={name} 
+            onChange={(e) => setName(e.target.value)}/>
             <br />
-            <label>
-                Latin Name:
-                <input type="text" value={latinName} onChange={(e) => setLatinName(e.target.value)} />
-            </label>
+            <TextField id="standard-basic" label="Latin Name:" variant="standard" value={latinName} 
+            onChange={(e) => setLatinName(e.target.value)}/>
             <br />
-            <label>
-                Image URL:
-                <input type="text" value={image} onChange={(e) => setImage(e.target.value)} />
-            </label>
+            <TextField id="standard-basic" label="Image URL:" variant="standard" value={image} 
+            onChange={(e) => setImage(e.target.value)}/>
             <br />
-            <button type="submit">Add Cat</button>
+            <br />
+            <Button variant="outlined" >Add Cat</Button>
         </form>
     );
 }
